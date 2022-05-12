@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 140080789}
   - component: {fileID: 140080788}
   - component: {fileID: 140080792}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,8 +441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f227f42d18e084e9edc584e28e4deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDistance: 3
-  speed: 10
   damage: 5
 --- !u!1001 &182821619
 PrefabInstance:
@@ -1029,7 +1027,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656072279}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1712,7 +1710,7 @@ GameObject:
   - component: {fileID: 1568476618}
   - component: {fileID: 1568476619}
   - component: {fileID: 1568476620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1908,7 +1906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4adafa8de5eaf94c8cd86d66dedac9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 50
+  startingHealth: 10
 --- !u!1 &1673367820
 GameObject:
   m_ObjectHideFlags: 0
