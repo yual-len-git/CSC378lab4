@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Health : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+    
 
     private void Awake()
     {
@@ -28,8 +31,20 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 anim.SetTrigger("die");
-                GetComponent<PlayerMovement>().enabled = false;
+                
+                // Player
+                if(GetComponent<PlayerMovement>() != null)
+                    GetComponent<PlayerMovement>().enabled = false;
+                
+                // Enemy
+                if(GetComponent<Slime>() != null)
+                    GetComponent<Slime>().enabled = false;
+
                 dead = true;
+            }
+            if (dead)
+            {
+                SceneManager.LoadScene("GameOverScreen");
             }
         }
     }
