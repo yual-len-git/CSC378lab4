@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -54,6 +55,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
             wallJumpCooldown += Time.deltaTime;
+
+
+        // Player falls off map
+        Vector3 player_location = transform.position;
+        if(player_location.y < -15)
+            SceneManager.LoadScene("GameOverScreen");
     }
 
     private void Jump()
