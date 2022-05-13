@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+
+    [Header("Components")]
+    [SerializeField] private Behaviour[] components;
     
 
     private void Awake()
@@ -31,21 +34,25 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 anim.SetTrigger("die");
+
+                foreach (Behaviour component in components)
+                    component.enabled = false;
+
                 
                 // Player
-                if(GetComponent<PlayerMovement>() != null)
-                    GetComponent<PlayerMovement>().enabled = false;
+                // if(GetComponent<PlayerMovement>() != null)
+                //     GetComponent<PlayerMovement>().enabled = false;
                 
-                // Enemy
-                if(GetComponent<Slime>() != null)
-                    GetComponent<Slime>().enabled = false;
+                // // Enemy
+                // if(GetComponent<Slime>() != null)
+                //     GetComponent<Slime>().enabled = false;
 
                 dead = true;
             }
-            if (dead)
-            {
-                SceneManager.LoadScene("GameOverScreen");
-            }
+            // if (dead)
+            // {
+            //     SceneManager.LoadScene("GameOverScreen");
+            // }
         }
     }
     public void AddHealth(float _value)
